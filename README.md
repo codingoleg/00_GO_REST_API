@@ -11,15 +11,20 @@ curl --location 'http://localhost:8000/api/order/' \
 }'
 ```
 
-+ http://localhost:8000/api/order/ [GET] \
++ http://localhost:8000/api/order/<order_id> [GET] \
   Получает информацию о заказе, где id заказа = 1
 ```bash
-curl --location 'http://localhost:8000/api/order/1' \
---data ''
+curl --location 'http://localhost:8000/api/order/1'
 ```
 
-+ http://localhost:8000/api/order/ [GET] \
++ http://localhost:8000/api/order/<user_id> [GET] \
   Получает информацию о всех заказах, где id пользователя = 1 
 ```bash
 curl --location 'http://localhost:8000/api/user/1'
+```
+
++ http://localhost:8000/api/order/ [GET] \
+  Получает информацию о всех заказах
+```bash
+curl --location 'http://localhost:8000/api/order/'
 ```

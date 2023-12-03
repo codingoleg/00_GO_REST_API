@@ -9,4 +9,5 @@ type TagsService interface {
 	Create(tags request.CreateTagsRequest)
 	FindByOrderId(tagsId int) response.TagsResponse
 	FindByUserId(tagsId int) []response.TagsResponse
+	FindAll() []response.TagsResponse
 }

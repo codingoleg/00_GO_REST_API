@@ -15,9 +15,10 @@ func NewRouter(tagsController *controller.TagsController) *gin.Engine {
 		ctx.JSON(http.StatusOK, "welcome home")
 	})
 	baseRouter := router.Group("/api")
-	baseRouter.GET("/user/:tagId", tagsController.FindByUserId)
-	baseRouter.GET("/order/:tagId", tagsController.FindByOrderId)
 	baseRouter.POST("/order", tagsController.Create)
+	baseRouter.GET("/order/:tagId", tagsController.FindByOrderId)
+	baseRouter.GET("/user/:tagId", tagsController.FindByUserId)
+	baseRouter.GET("/order", tagsController.FindAll)
 
 	return router
 }

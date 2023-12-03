@@ -42,3 +42,10 @@ func (t *TagsRepositoryImpl) FindByUserId(tagsId int) []model.Tags {
 	helper.ErrorPanic(result.Error)
 	return tags
 }
+
+func (t *TagsRepositoryImpl) FindAll() []model.Tags {
+	var tags []model.Tags
+	result := t.Db.Find(&tags)
+	helper.ErrorPanic(result.Error)
+	return tags
+}
